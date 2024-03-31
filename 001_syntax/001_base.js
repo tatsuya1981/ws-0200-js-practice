@@ -2,14 +2,17 @@
  *  1.1 Hello Worldという文字を出力するメソッドを定義してください
  *
  */
-function helloWorld() {
+const helloWorld = () => {
+  console.log('Hello World');
 }
 
 /**
  *  1.2 const を使って"hoge"という文字列を定義した変数を定義し、それを出力する関数を定義してください
  *
  */
-function displayConst() {
+const displayConst = () => {
+  const text = 'hoge';
+  console.log(text);
 }
 
 /**
@@ -17,6 +20,8 @@ function displayConst() {
  *
  */
 function displayLet() {
+  let text = 'hoge';
+  console.log(text);
 }
 
 /**
@@ -24,6 +29,7 @@ function displayLet() {
  *
  */
 function displayArgument(arg) {
+  console.log(arg);
 }
 
 /**
@@ -31,6 +37,8 @@ function displayArgument(arg) {
  *
  */
 function sumTwoArgs(a, b) {
+  const num = a + b;
+  return num;
 }
 
 /**
@@ -38,6 +46,8 @@ function sumTwoArgs(a, b) {
  *
  */
 function subtractTwoArgs(a, b) {
+  const num = a - b;
+  return num;
 }
 
 /**
@@ -45,13 +55,22 @@ function subtractTwoArgs(a, b) {
  *
  */
 function quotientTwoArgs(a, b) {
-}
+    const num = a / b;
+    const result = num|0;
+    if(result === 0) {
+      return null
+    } else {
+      return result;
+    };
+  }
 
 /**
  *  1.8 渡された二つの引数の積を返却するメソッドを実装してください
  *
  */
 function productTwoArgs(a, b) {
+  const num = a * b;
+  return num;
 }
 
 /**
@@ -59,6 +78,8 @@ function productTwoArgs(a, b) {
  *
  */
 function remainderTwoArgs(a) {
+  const num = a % 2;
+  return num;
 }
 
 /**
@@ -66,6 +87,12 @@ function remainderTwoArgs(a) {
  *
  */
 function isEven(a) {
+  const num = a % 2;
+  if(num === 0) {
+    return true;
+  } else {
+    return false;
+  };
 }
 
 /**
@@ -73,6 +100,8 @@ function isEven(a) {
  *
  */
 function concatString(a, b) {
+  let text = a + b;
+  return text;
 }
 
 module.exports = {
