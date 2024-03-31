@@ -6,6 +6,11 @@
  *
  */
 function printMessageByAge(age) {
+  if(age >= 20) {
+    console.log('成年です。');
+  } else {
+    console.log('未成年です。');
+  };
 }
 
 /**
@@ -17,6 +22,13 @@ function printMessageByAge(age) {
  *
  */
 function greeding(hour) {
+  if (hour >= 4 && hour < 12) {
+    console.log('Good Morning');
+  } else if (12<= hour && hour < 17) {
+    console.log('Hello');
+  } else {
+    console.log('Good Night');
+  }
 }
 
 /**
@@ -33,6 +45,10 @@ function greeding(hour) {
  */
 
 function getDay(day) {
+  let week = [
+    'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
+  ];
+  return week[day];
 }
 
 module.exports = {
