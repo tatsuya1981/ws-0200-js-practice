@@ -10,7 +10,7 @@ function printMessageByAge(age) {
     console.log('成年です。');
   } else {
     console.log('未成年です。');
-  };
+  }
 }
 
 /**
@@ -48,8 +48,12 @@ function getDay(day) {
   let week = [
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
   ];
-  return week[day];
+  if (day>=0 && day < 7) {
+      console.log(week[day]);
+  } else {
+  }
 }
+
 
 module.exports = {
   printMessageByAge,
