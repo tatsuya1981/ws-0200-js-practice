@@ -3,7 +3,10 @@
  *
  */
 
-function printArray(array) {
+const printArray = (array) => {
+  for (i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
 }
 
 /**
@@ -22,6 +25,14 @@ function printArray(array) {
  *
  */
 function getDays() {
+  const array = ["Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",];
+        return array;
 }
 
 /**
@@ -35,6 +46,7 @@ function getDays() {
  */
 
 function findNum(array, num) {
+  return array.includes(num);
 }
 
 /**
@@ -48,6 +60,8 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+  const set = new Set(array);
+  return set.size !== array.length;
 }
 
 module.exports = {
