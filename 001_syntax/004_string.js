@@ -4,7 +4,7 @@
  */
 
 function length(str) {
-  return str.length
+  return str.length;
 }
 
 /**
@@ -13,9 +13,9 @@ function length(str) {
  */
 
 const lengthIsEven = (str) => {
-  str = str.length
-  return str % 2 ===0
-}
+  str = str.length;
+  return str % 2 === 0;
+};
 
 /**
  *  4.3 文字列の先頭一文字目を返却するメソッドを実装してください
@@ -58,10 +58,8 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
-  str = a.indexOf(b);
-  return str === 0
+  return a.includes(b);
 }
-
 /**
  *  4.7 引数で渡された文字列を一文字ずつ表示するメソッドを実装してください
  *
@@ -78,12 +76,11 @@ function isInclude(a, b) {
  */
 
 const printByChar = (str) => {
-  arr = str.split("");
+  arr = [...str];
   for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+    console.log(arr[i]);
   }
-}
-
+};
 
 module.exports = {
   length,
@@ -92,5 +89,5 @@ module.exports = {
   lastChar,
   substring,
   isInclude,
-  printByChar
-}
+  printByChar,
+};
