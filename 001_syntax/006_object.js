@@ -31,6 +31,10 @@ function getPersonObject() {
  */
 
 function mutateObject(person) {
+  person["name"] = "Mary";
+  person["age"] = 37;
+  person["gender"] = "female";
+  return person;
 }
 
 /**
@@ -55,6 +59,10 @@ function mutateObject(person) {
  */
 
 function assignNumber(persons) {
+  const min = 1;
+  const max = 10;
+  const num = Math.floor(Math.random()*(max + 1 - min)) + min;
+
 }
 
 /**
