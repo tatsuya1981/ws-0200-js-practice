@@ -8,6 +8,12 @@
  */
 
 function getPersonObject() {
+  const obj = {
+    name: "Bob",
+    age:32,
+    gender: "male"
+  };
+  return obj;
 }
 
 /**
