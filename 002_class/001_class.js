@@ -22,7 +22,14 @@
  */
 
 class Person {
+  constructor() {
+    this.sayHi = "Hi!!";
+  }
 }
+const person = new Person();
+console.log(person.sayHi);
+
+
 
 function main () {
   const person = new Person('ichiro', 54, 'I like to play baseball')
