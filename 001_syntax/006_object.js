@@ -10,8 +10,8 @@
 function getPersonObject() {
   const obj = {
     name: "Bob",
-    age:32,
-    gender: "male"
+    age: 32,
+    gender: "male",
   };
   return obj;
 }
@@ -58,11 +58,32 @@ function mutateObject(person) {
  *
  */
 
+/** 6.3の課題で最初に書いたコード
 function assignNumber(persons) {
   const min = 1;
   const max = 10;
-  const num = Math.floor(Math.random()*(max + 1 - min)) + min;
-
+  let num = Math.floor(Math.random() * (max + 1 - min)) + min;
+  for (i = 0; i < persons.length; i++) {
+    let obj = Object.assign({}, persons, [num]);
+    return obj;
+  }
+}
+*/
+function assignNumber(persons) {
+  for (i = 0; i < persons.length; i++) {
+    a = persons[i];
+    b = { [a]: 1 };
+    const min = 1;
+    const max = 10;
+    const num = Math.floor(Math.random() * (max + 1 - min)) + min;
+    c = {
+      [persons[0]]: num,
+      [persons[1]]: num,
+      [persons[2]]: num,
+      [persons[3]]: num,
+    };
+    return c;
+  }
 }
 
 /**
@@ -76,12 +97,14 @@ function assignNumber(persons) {
  *
  */
 
-function isDuplicate(array) {
+const isDuplicate = (array) => {
+  const set = new Set(array);
+  return set.size !== array.length
 }
 
 module.exports = {
   getPersonObject,
   mutateObject,
   assignNumber,
-  isDuplicate
-}
+  isDuplicate,
+};
