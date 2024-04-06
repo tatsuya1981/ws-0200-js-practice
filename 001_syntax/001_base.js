@@ -37,8 +37,7 @@ function displayArgument(arg) {
  *
  */
 function sumTwoArgs(a, b) {
-  const num = a + b;
-  return num;
+  return a + b;
 }
 
 /**
