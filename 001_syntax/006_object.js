@@ -81,10 +81,14 @@ function assignNumber(persons) {
  *
  */
 
-const isDuplicate = (array) => {
+function isDuplicate (array) {
+  const arr = array.length;
   const set = new Set(array);
-  return set.size !== array.length;
-};
+  const set2 = set.size;
+     const z ={ a : arr};
+     const y ={ b : set2};
+  return z.a !== y.b;
+ }
 
 module.exports = {
   getPersonObject,
