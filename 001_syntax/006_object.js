@@ -63,9 +63,9 @@ function assignNumber(persons) {
   const max = 10;
   let num = Math.floor(Math.random() * (max + 1 - min)) + min;
   let obj = {};
-  const key = Object.keys(persons);
+  const key = Object.values(persons);
   for (i = 0; i < persons.length; i++) {
-    obj[persons[i]] = num;
+    obj[key[i]] = num;
   }
   return obj;
 }
@@ -81,14 +81,16 @@ function assignNumber(persons) {
  *
  */
 
-function isDuplicate (array) {
-  const arr = array.length;
-  const set = new Set(array);
-  const set2 = set.size;
-     const z ={ a : arr};
-     const y ={ b : set2};
-  return z.a !== y.b;
- }
+function isDuplicate(array) {
+  const obj = {};
+  for (const num of array) {
+    if (obj[num]) {
+      return true;
+    }
+    obj[num] = true;
+  }
+  return false;
+}
 
 module.exports = {
   getPersonObject,
