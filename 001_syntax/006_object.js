@@ -58,32 +58,16 @@ function mutateObject(person) {
  *
  */
 
-/** 6.3の課題で最初に書いたコード
 function assignNumber(persons) {
   const min = 1;
   const max = 10;
   let num = Math.floor(Math.random() * (max + 1 - min)) + min;
+  let obj = {};
+  const key = Object.keys(persons);
   for (i = 0; i < persons.length; i++) {
-    let obj = Object.assign({}, persons, [num]);
-    return obj;
+    obj[persons[i]] = num;
   }
-}
-*/
-function assignNumber(persons) {
-  for (i = 0; i < persons.length; i++) {
-    a = persons[i];
-    b = { [a]: 1 };
-    const min = 1;
-    const max = 10;
-    const num = Math.floor(Math.random() * (max + 1 - min)) + min;
-    c = {
-      [persons[0]]: num,
-      [persons[1]]: num,
-      [persons[2]]: num,
-      [persons[3]]: num,
-    };
-    return c;
-  }
+  return obj;
 }
 
 /**
@@ -97,10 +81,14 @@ function assignNumber(persons) {
  *
  */
 
-const isDuplicate = (array) => {
+function isDuplicate (array) {
+  const arr = array.length;
   const set = new Set(array);
-  return set.size !== array.length
-}
+  const set2 = set.size;
+     const z ={ a : arr};
+     const y ={ b : set2};
+  return z.a !== y.b;
+ }
 
 module.exports = {
   getPersonObject,
