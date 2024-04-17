@@ -27,6 +27,7 @@ class List {
    */
   get size() {
     // TODO:
+    return  this.data.length;
   }
 
   /** 引数で渡された添字のデータを取得する
@@ -36,6 +37,7 @@ class List {
    */
   index(index) {
     // TODO:
+    return this.data[index];
   }
 
   /** リストの 要素を追加する
@@ -45,6 +47,7 @@ class List {
    */
   push(item) {
     // TODO:
+    this.data.push(item);
   }
 
   /** 与えられた引数により、リストの 要素を削除する
@@ -54,6 +57,8 @@ class List {
    */
   remove(targetIndex) {
     // TODO:
+    const rm = this.data.splice(targetIndex, 1);
+    return rm[0];
   }
 
   /** リストの 末尾の要素を取得する
@@ -63,6 +68,8 @@ class List {
    */
   pop() {
     // TODO:
+    const pop = this.data.pop();
+    return pop;
   }
 
   /** リストの 先頭の要素を取得する
@@ -71,6 +78,8 @@ class List {
    */
   shift() {
     // TODO:
+    const shift = this.data.shift();
+    return shift;
   }
 
   /** リストの の中から引数に合致する値を取得する
@@ -82,6 +91,11 @@ class List {
    */
   find(target) {
     // TODO:
+    for(let num of this.data){
+      if (num === target) {
+        return num;
+      }
+    };
   }
 
   /** リストの の中から引数に合致する値のindexを取得する。見つからない場合は-1を返す
@@ -93,6 +107,14 @@ class List {
    */
   findIndex(target) {
     // TODO:
+    let i = 0;
+    while(i < this.data.length){
+      if(this.data[i] === target) {
+        return i;
+      }
+      i++;
+    }
+    return -1;
   }
 
   /** リストの の中から要素に合致する数を取り除く
@@ -106,7 +128,15 @@ class List {
    */
   filter(target) {
     // TODO:
-  }
+    let arr = [];
+    for (let num of this.data) {
+        if (num !== target) {
+          arr.push(num);
+        }
+    }
+    
+    return new List(arr);
+  };
 }
 
 /**
@@ -136,6 +166,7 @@ class Stack {
    */
   push(item) {
     // TODO:
+    this.data.push(item);
   }
 
   /** スタックから要素を取得する
@@ -145,6 +176,8 @@ class Stack {
    */
   pop() {
     // TODO:
+    const pop = this.data.pop();
+    return pop;
   }
 
   /** スタックの末尾の要素を参照する
@@ -154,6 +187,8 @@ class Stack {
    */
   peek() {
     // TODO:
+    const num = this.data.unshift();
+    return num;
   }
 }
 
@@ -185,6 +220,7 @@ class Queue {
    */
   enqueue(item) {
     // TODO:
+    return this.data.push(item);
   }
 
   /** キューから要素を取得する
@@ -193,6 +229,7 @@ class Queue {
    */
   dequeue() {
     // TODO:
+    return this.data.shift();
   }
 
   /** キューの要素を参照する
@@ -201,6 +238,10 @@ class Queue {
    */
   peek() {
     // TODO:
+    const number = this.data.values();
+    for(const result of number) {
+      return result;
+    }
   }
 }
 

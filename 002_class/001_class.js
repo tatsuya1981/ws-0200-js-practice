@@ -35,7 +35,8 @@ class Person {
   }
 
   toString() {
-    
+  
+  
     return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`;
   }
 
@@ -66,7 +67,6 @@ function main () {
   person.bio = 'I like to play basketball'
   return person.toString()
 }
-
 module.exports = {
   Person,
   main
