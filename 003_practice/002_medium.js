@@ -71,6 +71,14 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
+  let str2 = "";
+  for(let i = str.length - 1; i >= 0; i--){
+    str2 += str[i];
+  }
+  if(str === str2) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -88,6 +96,18 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
+  if(num <= 1) {
+    return false;
+  } else if(num === 2) {
+    return true;
+  }
+
+  for(let i = 2; i < num; i++){
+  if(num % i === 0) {
+    return false;
+  }
+}
+return true;
 }
 
 /**
