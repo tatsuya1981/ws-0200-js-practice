@@ -187,8 +187,9 @@ class Stack {
    */
   peek() {
     // TODO:
-    const num = this.data.unshift();
-    return num;
+    if (this.data.length > 0) {
+      return this.data[this.data.length - 1];
+    }
   }
 }
 
@@ -238,8 +239,7 @@ class Queue {
    */
   peek() {
     // TODO:
-    const number = this.data.values();
-    for(const result of number) {
+    for(const result of this.data) {
       return result;
     }
   }

@@ -12,9 +12,8 @@
  */
 
 function length(str) {
-  const str2 = str.split("");
-  let i = 0;
-  for(let str3 of str2) {
+  let i = 0
+  for(let s of str) {
     i++
   }
   return i;
