@@ -10,6 +10,9 @@
  *
  */
 function rotate(str, num) {
+    num = num * -1
+  return str.slice(num) + str.slice(0, num);
+
 }
 
 /**
@@ -24,6 +27,14 @@ function rotate(str, num) {
  *
  */
 function removeVowels(str) {
+  let arr = ["a", "i", "u", "e", "o"];
+  let str2 = "";
+  for(let str3 of str) {
+  if(!arr.includes(str3.toLowerCase())) {
+    str2 += str3;
+  }
+}
+return str2;
 }
 
 /**
@@ -38,6 +49,13 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
+  let s3 = 0;
+  const z = new RegExp(s2, "g");
+  if(s1 === "" || s2 === "") {
+    return 0;
+  }
+  s3 = s1.match(z).length;
+  return s3;
 }
 
 /**
@@ -53,6 +71,14 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
+  let str2 = "";
+  for(let i = str.length - 1; i >= 0; i--){
+    str2 += str[i];
+  }
+  if(str === str2) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -70,6 +96,18 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
+  if(num <= 1) {
+    return false;
+  } else if(num === 2) {
+    return true;
+  }
+
+  for(let i = 2; i < num; i++){
+  if(num % i === 0) {
+    return false;
+  }
+}
+return true;
 }
 
 /**

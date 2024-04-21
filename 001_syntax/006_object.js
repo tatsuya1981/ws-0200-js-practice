@@ -63,9 +63,8 @@ function assignNumber(persons) {
   const max = 10;
   let num = Math.floor(Math.random() * (max + 1 - min)) + min;
   let obj = {};
-  const key = Object.values(persons);
   for (i = 0; i < persons.length; i++) {
-    obj[key[i]] = num;
+    obj[persons[i]] = num;
   }
   return obj;
 }
