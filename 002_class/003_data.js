@@ -27,7 +27,7 @@ class List {
    */
   get size() {
     // TODO:
-    return  this.data.length;
+    return this.data.length;
   }
 
   /** 引数で渡された添字のデータを取得する
@@ -91,11 +91,11 @@ class List {
    */
   find(target) {
     // TODO:
-    for(let num of this.data){
+    for (let num of this.data) {
       if (num === target) {
         return num;
       }
-    };
+    }
   }
 
   /** リストの の中から引数に合致する値のindexを取得する。見つからない場合は-1を返す
@@ -108,8 +108,8 @@ class List {
   findIndex(target) {
     // TODO:
     let i = 0;
-    while(i < this.data.length){
-      if(this.data[i] === target) {
+    while (i < this.data.length) {
+      if (this.data[i] === target) {
         return i;
       }
       i++;
@@ -130,13 +130,13 @@ class List {
     // TODO:
     let arr = [];
     for (let num of this.data) {
-        if (num !== target) {
-          arr.push(num);
-        }
+      if (num !== target) {
+        arr.push(num);
+      }
     }
-    
+
     return new List(arr);
-  };
+  }
 }
 
 /**
@@ -239,7 +239,7 @@ class Queue {
    */
   peek() {
     // TODO:
-    for(const result of this.data) {
+    for (const result of this.data) {
       return result;
     }
   }
@@ -248,5 +248,5 @@ class Queue {
 module.exports = {
   List,
   Stack,
-  Queue
+  Queue,
 };
