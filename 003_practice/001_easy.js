@@ -50,10 +50,9 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
-  const str2 = str.split("");
   i = 0;
-  for (let str3 of str2) {
-    if (str3 === char) {
+  for (let str2 of str) {
+    if (str2 === char) {
       return i;
     } else {
       i++;
