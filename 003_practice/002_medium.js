@@ -10,9 +10,8 @@
  *
  */
 function rotate(str, num) {
-    num = num * -1
+  num = num * -1;
   return str.slice(num) + str.slice(0, num);
-
 }
 
 /**
@@ -29,12 +28,12 @@ function rotate(str, num) {
 function removeVowels(str) {
   let arr = ["a", "i", "u", "e", "o"];
   let str2 = "";
-  for(let str3 of str) {
-  if(!arr.includes(str3.toLowerCase())) {
-    str2 += str3;
+  for (let str3 of str) {
+    if (!arr.includes(str3.toLowerCase())) {
+      str2 += str3;
+    }
   }
-}
-return str2;
+  return str2;
 }
 
 /**
@@ -51,7 +50,7 @@ return str2;
 function countStr(s1, s2) {
   let s3 = 0;
   const z = new RegExp(s2, "g");
-  if(s1 === "" || s2 === "") {
+  if (s1 === "" || s2 === "") {
     return 0;
   }
   s3 = s1.match(z).length;
@@ -71,14 +70,14 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
-  let str2 = "";
-  for(let i = str.length - 1; i >= 0; i--){
-    str2 += str[i];
+  let a = str.length - 1;
+  for (let i = 0; i <= str.length / 2; i++) {
+    if (str.charAt(i) !== str.charAt(a)) {
+      return false;
+    }
+    a--;
   }
-  if(str === str2) {
-    return true;
-  }
-  return false;
+  return true;
 }
 
 /**
@@ -96,18 +95,16 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
-  if(num <= 1) {
+  if (num <= 1) {
     return false;
-  } else if(num === 2) {
-    return true;
   }
 
-  for(let i = 2; i < num; i++){
-  if(num % i === 0) {
-    return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
   }
-}
-return true;
+  return true;
 }
 
 /**
@@ -126,6 +123,18 @@ return true;
  *
  */
 function sumWithout4andNext(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 4) {
+      if (array[i] === array[i + 1]) {
+        continue;
+      }
+      array[i + 1] = 0;
+      i++;
+    }
+    sum += array[i];
+  }
+  return sum;
 }
 
 module.exports = {
@@ -134,5 +143,5 @@ module.exports = {
   countStr,
   isPalindrome,
   isPrime,
-  sumWithout4andNext
-}
+  sumWithout4andNext,
+};
