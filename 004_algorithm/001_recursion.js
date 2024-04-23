@@ -1,4 +1,3 @@
-
 /**
  *  数列の和
  *
@@ -10,7 +9,11 @@
  *    30 => 55
  */
 
-function sumSequence (n, sum = 0) {
+function sumSequence(n, sum = 0) {
+  if (n === 0) {
+    return sum;
+  }
+  return sumSequence(n - 1, sum + n);
 }
 
 /**
@@ -23,9 +26,21 @@ function sumSequence (n, sum = 0) {
  *    input: 10 => [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
  */
 
-function fibonacci (num) {
-}
+function fibonacci(num) {
+  arr = [];
+  function result(num2) {
+    if (num2 <= 1) {
+      return 1;
+    } else {
+      return arr[num2 - 1] + arr[num2 - 2];
+    }
+  }
 
+  for (i = 0; i < num; i++) {
+    arr.push(result(i));
+  }
+  return arr;
+}
 
 /**
  *  2.4.2 ディレクトリに含まれるファイルサイズの合計
@@ -79,12 +94,19 @@ function fibonacci (num) {
  *    => 38
  */
 
-function fileSize (node, sum = 0) {
+function fileSize(node, sum = 0) {
+  if (node.type === "file") {
+    return sum + node.size;
+  } else {
+    for (const children of node.children) {
+      sum = fileSize(children, sum);
+    }
+    return sum;
+  }
 }
-
 
 module.exports = {
   sumSequence,
   fibonacci,
-  fileSize
-}
+  fileSize,
+};
