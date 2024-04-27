@@ -70,12 +70,10 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
-  let a = str.length - 1;
   for (let i = 0; i <= str.length / 2; i++) {
-    if (str.charAt(i) !== str.charAt(a)) {
+    if (str[i] !== str[str.length - 1 - i]) {
       return false;
     }
-    a--;
   }
   return true;
 }
@@ -98,8 +96,7 @@ function isPrime(num) {
   if (num <= 1) {
     return false;
   }
-
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
       return false;
     }
@@ -126,7 +123,7 @@ function sumWithout4andNext(array) {
   let sum = 0;
   for (let i = 0; i < array.length; i++) {
     if (array[i] === 4) {
-      if (array[i] === array[i + 1]) {
+      if (array[i + 1] === 4) {
         continue;
       }
       array[i + 1] = 0;

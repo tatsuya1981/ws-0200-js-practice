@@ -39,10 +39,7 @@ class Person {
   }
 
   get isUnderage() {
-    if (this.age < 20) {
-      return true;
-    }
-    return false;
+    return this.age < 20;
   }
 }
 const person = new Person();
