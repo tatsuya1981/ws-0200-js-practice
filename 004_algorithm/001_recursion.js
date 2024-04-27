@@ -27,19 +27,17 @@ function sumSequence(n, sum = 0) {
  */
 
 function fibonacci(num) {
-  arr = [];
-  function result(num2) {
-    if (num2 <= 1) {
-      return 1;
-    } else {
-      return arr[num2 - 1] + arr[num2 - 2];
-    }
+  if (num === 0) {
+    return [];
+  } else if (num === 1) {
+    return [1];
+  } else if (num === 2) {
+    return [1, 1];
+  } else {
+    const fib = fibonacci(num - 1);
+    const newnum = fib[fib.length - 1] + fib[fib.length - 2];
+    return [...fib, newnum];
   }
-
-  for (i = 0; i < num; i++) {
-    arr.push(result(i));
-  }
-  return arr;
 }
 
 /**

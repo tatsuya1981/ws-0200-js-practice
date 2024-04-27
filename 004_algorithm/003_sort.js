@@ -9,9 +9,9 @@
  */
 
 function bubbleSort(array) {
-  for(let i = 0; i <= array.length; i++) {
-    for(let j = array.length; i < j; j--) {
-      if(array[j - 1] > array[j]) {
+  for (let i = 0; i <= array.length; i++) {
+    for (let j = array.length; i < j; j--) {
+      if (array[j - 1] > array[j]) {
         let tmp = array[j - 1];
         array[j - 1] = array[j];
         array[j] = tmp;
@@ -35,7 +35,7 @@ function insertSort(array) {
   for (let i = 1; i < array.length; i++) {
     let j = i - 1;
     let tmp = array[i];
-    while(j >= 0 && array[j] > tmp) {
+    while (j >= 0 && array[j] > tmp) {
       array[j + 1] = array[j];
       j--;
     }
@@ -82,8 +82,6 @@ function mergeArr(left, right) {
   }
   return result;
 }
-
-function merge(left, right) {}
 
 /**
  *  2.2.4 クイックソート
